@@ -1,27 +1,22 @@
 # Juego de piedra, papel o tijera hecho en python!
 
+from random import choice
+
 piedra = 'piedra'
 papel = 'papel'
 tijera = 'tijera'
+
+jugadas = [piedra, papel, tijera]
 
 
 def juego(user, cpu):
     if user != cpu:
         if user == piedra:
-            if cpu == papel:
-                res = 'Perdiste!'
-            elif cpu == tijera:
-                res = 'Ganaste!'
+            res = 'Ganaste!' if cpu == tijera else 'Perdiste!'
         elif user == papel:
-            if cpu == piedra:
-                res = 'Ganaste!'
-            elif cpu == tijera:
-                res = 'Perdiste!'
+            res = 'Ganaste!' if cpu == piedra else 'Perdiste!'
         elif user == tijera:
-            if cpu == piedra:
-                res = 'Perdiste!'
-            elif cpu == papel:
-                res = 'Ganaste!'
+            res = 'Ganaste!' if cpu == papel else 'Perdiste!'
         else:
             res = 'Please enter a valid option! '
     else:
@@ -30,6 +25,7 @@ def juego(user, cpu):
 
 
 if __name__ == "__main__":
-    user = input('Ingresa la jugada del user: ')
-    cpu = input('Ingresa la jugada de la cpu: ')
+    user = input('Ingresa su jugada: ')
+    cpu = choice(jugadas)
+    print(f'La compu jugó {cpu}')
     print(juego(user, cpu))
