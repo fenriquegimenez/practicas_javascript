@@ -1,8 +1,6 @@
 piedra = 'piedra'
 papel = 'papel'
 tijera = 'tijera'
-user = input('Ingresa la jugada del user: ')
-cpu = input('Ingresa la jugada de la cpu: ')
 
 
 def juego(user, cpu):
@@ -29,4 +27,7 @@ def juego(user, cpu):
     return res
 
 
-print(juego(user, cpu))
+if __name__ == "__main__":
+    user = input('Ingresa la jugada del user: ')
+    cpu = input('Ingresa la jugada de la cpu: ')
+    print(juego(user, cpu))
