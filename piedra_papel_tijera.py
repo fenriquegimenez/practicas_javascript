@@ -1,3 +1,5 @@
+# Juego de piedra, papel o tijera hecho en python!
+
 piedra = 'piedra'
 papel = 'papel'
 tijera = 'tijera'
