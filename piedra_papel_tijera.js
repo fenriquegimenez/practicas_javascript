@@ -1,31 +1,27 @@
 var piedra = "piedra";
 var papel = "papel";
 var tijera = "tijera";
+jugadas = [piedra, papel, tijera];
 
 function juego(user, cpu) {
   if (user != cpu) {
     if (user == piedra) {
-      if (cpu == tijera) {
-        res = "Ganaste!";
-      } else if (cpu == papel) {
-        res = "Perdiste!";
-      }
+      res = "Ganaste!" ? cpu == tijera : "Perdiste!";
     } else if (user == papel) {
-      if (cpu == tijera) {
-        res = "Perdiste!";
-      } else if (cpu == piedra) {
-        res == "Ganaste!";
-      }
+      res = "Ganaste!" ? cpu == piedra : "Perdiste!";
     } else if (user == tijera) {
-      if (cpu == piedra) {
-        res == "Perdiste!";
-      } else if (cpu == papel) {
-        res == "Ganaste!";
-      }
+      res = "Ganaste!" ? cpu == papel : "Perdiste!";
+    } else {
+      res = "Introduce una opción válida.";
     }
   } else {
     res = "Empate!";
   }
   return res;
 }
-console.log(juego(papel, papel));
+
+index_jugadas = Math.floor(Math.random() * jugadas.length);
+cpu = jugadas[index_jugadas];
+user = prompt("Por favor introduce ");
+console.log(`La compu jugó ${cpu}`);
+console.log(juego(user, cpu));
