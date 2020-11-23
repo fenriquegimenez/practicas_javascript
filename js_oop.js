@@ -17,3 +17,11 @@ participants = [student, teacher];
 for (participant of participants) {
   console.log(participant.info());
 }
+
+function cumpleanos(person) {
+  return (person.age += 1);
+}
+
+student.age = cumpleanos(student);
+
+console.log(`La nueva edad de ${student.name} es ${student.age}`);
