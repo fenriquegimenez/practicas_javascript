@@ -6,9 +6,8 @@ class Person {
     this.last_name = last_name;
     this.age = age;
   }
-  esMayorDeEdad() {
-    return this.age >= mayoriaDeEdad;
-  }
+  esMayorDeEdad = () => this.age >= mayoriaDeEdad;
+
   mayorDeEdad() {
     var mayor;
     if (this.age >= mayoriaDeEdad) {
@@ -17,6 +16,11 @@ class Person {
       mayor = `${this.name} es menor de edad`;
     }
     return mayor;
+  }
+  permitirAcceso() {
+    if (!this.esMayorDeEdad()) {
+      return 'ACCESO DENEGADO';
+    }
   }
 }
 
@@ -27,4 +31,5 @@ personas = [enzo, enrique];
 
 for (persona of personas) {
   console.log(persona.mayorDeEdad());
+  console.log(persona.permitirAcceso());
 }
